@@ -1,79 +1,71 @@
-import { useState } from "react";
-
-import Button from "./components/Button";
-import Icon from "./components/Icon";
-import Pin from "./components/Pin";
-import Typewriter from "./components/Typewriter";
-
-import viteLogo from "/vite.svg";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  const words = [
-    { text: "Vite", className: "text-[#a95eff]" },
-    { text: " + " },
-    { text: "React", className: "text-[#61dafb]" },
-    { text: " + " },
-    { text: "Tailwindcss", className: "text-[#0ea5e9]" },
-    { text: " + " },
-    { text: "Framer Motion", className: "text-[#ff57c8]" },
-  ];
-
   return (
-    <div className="text-center">
-      <header className="flex min-h-screen flex-col items-center justify-center gap-2 bg-[#282c34] pb-8 text-white">
-        <Pin text="React 👍">
-          <Icon />
-        </Pin>
-
-        <Typewriter words={words} />
-        <p className="my-10">
-          <Button onTap={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </Button>
-        </p>
-        <p>
-          Edit <code className="text-[#8d96a7]">App.tsx</code> and save to test
-          HMR updates.
-        </p>
-        <p className="mt-3 flex gap-3 text-center text-[#8d96a7]">
-          <a
-            className="text-[#61dafb] transition-all hover:text-blue-500"
-            href="https://react.dev/learn"
-            target="_blank"
-          >
-            Learn React
-          </a>
-          {" | "}
-          <a
-            className="text-[#61dafb] transition-all hover:text-blue-500"
-            href="https://vitejs.dev/guide/"
-            target="_blank"
-          >
-            Vite Docs
-          </a>
-          {" | "}
-          <a
-            className="text-[#61dafb] transition-all hover:text-blue-500"
-            href="https://tailwindcss.com/docs/installation"
-            target="_blank"
-          >
-            Tailwindcss Docs
-          </a>
-          {" | "}
-          <a
-            className="text-[#61dafb] transition-all hover:text-blue-500"
-            href="https://www.framer.com/motion/"
-            target="_blank"
-          >
-            Framer Docs
-          </a>
-        </p>
-        <img src={viteLogo} className="mx-auto my-4" />
-      </header>
+    <div className="flex min-h-screen w-full items-center justify-center bg-slate-800">
+      <div className="text-center text-white">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+          className="text-4xl font-bold "
+        >
+          KOSMIX.FR
+        </motion.div>
+        <motion.div
+          initial={{ paddingTop: 0 }}
+          animate={{ paddingTop: 20 }}
+          className="text-xl font-semibold"
+        >
+          My Projects
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, ease: "easeIn" }}
+        >
+          <div className="font-semibold">
+            <a href="https://xxxxvideos.kosmix.fr">1. Streaming Website</a>
+            <div>2. Linux Management Dashboard</div>
+            <div>And Many other not finished </div>
+          </div>
+          <div>
+            <div className="text-3xl font-bold">Contact</div>
+            <div>Je te dis que j'ai un discord : "KOSMIX.FR"</div>
+          </div>
+          <div>
+            <div className="text-2xl font-semibold">Mes Stacks:</div>
+            <div>
+              Nodejs, gorm, ffmpeg stack, prisma, react, typescript, go, rust,
+              <br />
+              python, docker, gin-gonic, express, nextjs, framer-motion, golang,
+              <br />
+              tailwindcss, linux, nginx, apache2, hp ilo, proxmoxve, <br />
+              html/css/js natif websocket, socket.io, letsencrypt, <br />
+              <a
+                className="underline"
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUIcmlja3JvbGw%3D"
+              >
+                and more
+              </a>
+            </div>
+          </div>
+        </motion.div>
+      </div>
     </div>
   );
 }
+
+function theo() {
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "t") {
+      e.preventDefault();
+      alert("Theo is the best");
+    }
+  });
+}
+
+theo();
 
 export default App;
